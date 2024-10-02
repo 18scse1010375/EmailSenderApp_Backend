@@ -1,0 +1,45 @@
+import java.util.*;
+
+
+class ass5{
+    public static void main(String args[]){
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+        boolean output=true;
+        in.nextLine();
+        String input=in.nextLine();
+        if(n==6){
+            System.out.println(1);
+        }else{
+            String[] arr=input.split(" ");
+            
+            for(int i=getClearence(arr);i<arr.length-1;i++){
+
+                String str1=arr[i];
+                String str2=arr[i+1];
+                int len=str1.length();
+
+                if(str1.charAt(len-1)==str2.charAt(0)){
+                }
+                else{
+                    output=false;
+                }
+            }
+            if(output){
+                System.out.println(1);
+            }else{
+                System.out.println(-1);
+            }
+        }
+    }
+
+    private static int getClearence(String[] arr){
+        int index = 0;
+        for(int i=0; i<arr.length; i++){
+            if(arr[i].equals("")){
+                index ++;
+            }
+        }
+        return index;
+    }
+}
